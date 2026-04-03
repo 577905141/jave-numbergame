@@ -1,0 +1,10 @@
+Guess the Number Game Results
+Secret number: 100
+Guesses:
+50
+60
+80
+90
+99
+100
+Total guesses: 6
