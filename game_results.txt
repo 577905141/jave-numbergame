@@ -1,10 +1,12 @@
 Guess the Number Game Results
-Secret number: 100
+Secret number: 84
 Guesses:
-50
-60
 80
-90
-99
 100
-Total guesses: 6
+90
+85
+81
+82
+83
+84
+Total guesses: 8

@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ public class GuessNumberGame {
     }
 
     public void startGame() {
+        readPreviousResults();
+
         System.out.println("Welcome to the Guess the Number Game!");
         System.out.println("I picked a number between 1 and 100.");
         System.out.println("Try to guess it.");
@@ -71,6 +74,26 @@ public class GuessNumberGame {
             writer.close();
         } catch (IOException e) {
             System.out.println("An error occurred while writing to the file.");
+        }
+    }
+
+    public void readPreviousResults() {
+        try {
+            File file = new File("game_results.txt");
+            if (file.exists()) {
+                Scanner fileScanner = new Scanner(file);
+                System.out.println("Previous game results:");
+                while (fileScanner.hasNextLine()) {
+                    System.out.println(fileScanner.nextLine());
+                }
+                fileScanner.close();
+                System.out.println();
+            } else {
+                System.out.println("No previous game results found.");
+                System.out.println();
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file.");
         }
     }
 
